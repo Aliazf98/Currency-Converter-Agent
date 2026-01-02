@@ -43,30 +43,4 @@ cp .env.example .env
 
 # Launch Jupyter
 jupyter notebook currency-converter-agent.ipynb
-
-## 📖 Usage Tutorial
-
-**✅ Bash setup complete above!** Now inside Jupyter notebook:
-
-**Open**: `currency-converter-agent.ipynb`
-
-**Run cells top-to-bottom**:
-
-| # | Cell | Action | Success Message |
-|---|------|--------|-----------------|
-| 1 | **Cell 1** | Imports + `.env` load | `Setup complete. API key loaded` |
-| 2 | **Cell 2** | Gemini model config | `Model configuration created` |
-| 3 | **Cell 3** | Tools (fees + rates) | `Custom tools created w/ caching` |
-| 4 | **Cell 4** | Calculator agent | `Calculation Agent created` |
-| 5 | **Cell 5** | Main agent | `Enhanced Currency Agent created` |
-
-### 🚀 Test It!
-
-**Cell 6+** → Copy & Run:
-
-```python
-await test_conversion_agent(
-    enhancedcurrencyagent,
-    "Convert 1000 EUR to TRY with fees",
-    "Enhanced Agent"
-)
+```
