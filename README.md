@@ -39,7 +39,7 @@ pip install google-adk google-generativeai requests python-dotenv jupyter
 
 # Create .env file with your API key
 cp .env.example .env
-# Edit .env file (see API Key section below)
+# Edit .env file
 
 # Launch Jupyter
 jupyter notebook currency-converter-agent.ipynb
