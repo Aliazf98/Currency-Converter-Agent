@@ -8,22 +8,22 @@ This repository contains an **ADK AI Agent** for currency conversion using Googl
 
 The Jupyter notebook implements a specialized LLM agent powered by **Gemini models**, custom tools for fees and rates (with 1-hour caching), and a calculation sub-agent for precise math.
 
-## ✨ Features
+## Features
 
-- 🌐 **Live exchange rates** via Frankfurter API with 1-hour caching
-- 💰 **Realistic transaction fees** (percentage + fixed) per currency pair
-- ✅ **Supported currencies**: USD, EUR, GBP, TRY, CAD, AUD
-- 📊 **Clean output format**: Original amount, fees, rate, final amount
-- 🛡️ **Error handling** for unsupported currencies and API failures
-- 🔄 **Rate limit friendly** with intelligent caching
+- **Live exchange rates** via Frankfurter API with 1-hour caching
+- **Realistic transaction fees** (percentage + fixed) per currency pair
+- **Supported currencies**: USD, EUR, GBP, TRY, CAD, AUD
+- **Clean output format**: Original amount, fees, rate, final amount
+- **Error handling** for unsupported currencies and API failures
+- **Rate limit friendly** with intelligent caching
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Python 3.13+ with Jupyter
 - Google AI Studio API key (free tier)
 - Dependencies: `google-adk`, `google-generativeai`, `requests`, `python-dotenv`
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone the repository
@@ -43,3 +43,30 @@ cp .env.example .env
 
 # Launch Jupyter
 jupyter notebook currency-converter-agent.ipynb
+
+## 📖 Usage Tutorial
+
+**✅ Bash setup complete above!** Now inside Jupyter notebook:
+
+**Open**: `currency-converter-agent.ipynb`
+
+**Run cells top-to-bottom**:
+
+| # | Cell | Action | Success Message |
+|---|------|--------|-----------------|
+| 1 | **Cell 1** | Imports + `.env` load | `Setup complete. API key loaded` |
+| 2 | **Cell 2** | Gemini model config | `Model configuration created` |
+| 3 | **Cell 3** | Tools (fees + rates) | `Custom tools created w/ caching` |
+| 4 | **Cell 4** | Calculator agent | `Calculation Agent created` |
+| 5 | **Cell 5** | Main agent | `Enhanced Currency Agent created` |
+
+### 🚀 Test It!
+
+**Cell 6+** → Copy & Run:
+
+```python
+await test_conversion_agent(
+    enhancedcurrencyagent,
+    "Convert 1000 EUR to TRY with fees",
+    "Enhanced Agent"
+)
