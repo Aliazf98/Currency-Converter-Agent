@@ -35,7 +35,7 @@ python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install dependencies
-pip install -r requirements.txt  # Or manually: pip install google-adk google-generativeai requests python-dotenv jupyter
+pip install google-adk google-generativeai requests python-dotenv jupyter
 
 # Create .env file with your API key
 cp .env.example .env
