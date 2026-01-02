@@ -44,3 +44,49 @@ cp .env.example .env
 # Launch Jupyter
 jupyter notebook currency-converter-agent.ipynb
 ```
+
+## Usage Tutorial
+
+**Open**: `currency-converter-agent.ipynb`
+
+**Run cells top-to-bottom**:
+
+| # | Cell | Action | Success Message |
+|---|------|--------|-----------------|
+| 1 | **Cell 1** | Imports + `.env` load | `Setup complete. API key loaded` |
+| 2 | **Cell 2** | Gemini model config | `Model configuration created` |
+| 3 | **Cell 3** | Tools (fees + rates) | `Custom tools created w/ caching` |
+| 4 | **Cell 4** | Calculator agent | `Calculation Agent created` |
+| 5 | **Cell 5** | Main agent | `Enhanced Currency Agent created` |
+
+### 🚀 Test It!
+
+**Cell 6+** → Copy & Run:
+
+```python
+await test_conversion_agent(
+    enhancedcurrencyagent,
+    "Convert 1000 EUR to TRY with fees",
+    "Enhanced Agent"
+)
+```
+
+## Changing API Key Locally
+
+```bash
+# Method 1: Edit .env directly
+nano .env
+# Update line: GOOGLE_API_KEY=NewAIzaSyKeyHere
+
+# Method 2: Replace via terminal (secure - hidden input)
+read -s -p "Enter new API key: " newkey
+echo "GOOGLE_API_KEY=$newkey" > .env
+
+# Verify change (shows first 20 chars only)
+grep GOOGLE_API_KEY .env | cut -c1-30 '...'
+
+# Method 3: Quick check current key
+head -1 .env
+
+# Restart Jupyter: Kernel → Restart → Run Cell 1
+```
