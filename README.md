@@ -7,6 +7,7 @@
 This repository contains an **ADK AI Agent** for currency conversion using Google's Agent Development Kit (ADK). The agent fetches **live exchange rates** from the Frankfurter API, calculates **transaction fees** for common currency pairs (USD, EUR, GBP, TRY, CAD, AUD), and provides formatted conversion summaries with fee deductions.
 
 The Jupyter notebook implements a specialized LLM agent powered by **Gemini models**, custom tools for fees and rates (with 1-hour caching), and a calculation sub-agent for precise math.
+
 ## ✨ Features
 
 - 🌐 **Live exchange rates** via Frankfurter API with 1-hour caching
@@ -42,54 +43,3 @@ cp .env.example .env
 
 # Launch Jupyter
 jupyter notebook currency-converter-agent.ipynb
-🔑 Google API Key Setup
-1. Get your FREE API Key
-bash
-# Visit Google AI Studio
-open https://aistudio.google.com/app/apikey
-Sign in → Create API key → Create API key in new project
-
-Copy key: AIzaSy...
-
-2. Create .env file
-bash
-# Show .env template
-cat .env.example
-# Output:
-# GOOGLE_API_KEY=AIzaSyYOURKEYHERE
-
-# Create your .env
-echo "GOOGLE_API_KEY=AIzaSyYourActualKeyHere" > .env
-
-# Verify (key will be partially hidden for security)
-echo $GOOGLE_API_KEY | cut -c1-20 '...'
-# Or in Python: print(os.getenv('GOOGLE_API_KEY')[:20] + '...')
-3. Security Warning ⚠️
-bash
-# Add .env to gitignore (IMPORTANT!)
-echo ".env" >> .gitignore
-git add .gitignore
-git commit -m "Secure .env file"
-📖 Usage Tutorial
-Open notebook: currency-converter-agent.ipynb
-
-Run cells sequentially:
-
-✅ Cell 1: Imports & .env loading
-
-✅ Cell 2: Model config (Gemini)
-
-✅ Cell 3: Custom tools (fees + rates)
-
-✅ Cell 4: Calculation agent
-
-✅ Cell 5: Main currency agent
-
-Test conversion:
-
-python
-await test_conversion_agent(
-    enhancedcurrencyagent, 
-    "Convert 1000 EUR to TRY with fees", 
-    "Enhanced Agent"
-)
